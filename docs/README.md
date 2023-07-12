@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /mine.png
-heroText: 我的博客
+heroText: 哈哈哈的博客
 tagline: 博客副标题
 actionText: 查看 →
 actionLink: /foo
