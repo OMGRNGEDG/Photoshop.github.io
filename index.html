@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    a,
+    a:link {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #805dde;
+    }
+
+    fieldset,
+    img {
+      border: 0 none;
+    }
+
+    ::selection {
+      background: #805dde;
+      color: #fff;
+    }
+
+    *::-moz-selection {
+      background: none repeat scroll 0 0 #805dde;
+      color: #fff;
+    }
+
+    ::-webkit-selection {
+      background: #805dde;
+      color: #fff;
+    }
+
+    .clearfix:after {
+      clear: both;
+      content: "";
+      display: block;
+      height: 0;
+    }
+
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    fieldset,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+      font-size: 13px;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none outside none;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      font-family: "微软雅黑", Arial;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .topbar_new {
+      background: url(//cmsimgs.zuowen.com/zuowen/cms/images/pc/topbar.gif) repeat-x;
+      width: 100%;
+      height: 42px;
+      position: fixed;
+      top: 0;
+      z-index: 9999;
+    }
+
+
+    .topbar_wrapper {
+      line-height: 41px;
+      margin: 0 auto;
+      width: 680px;
+    }
+
+    .topbar_links {
+      float: left;
+      width: 500px;
+    }
+
+    .topbar_links a {
+      padding-right: 10px;
+    }
+
+    .topbar_tools {
+      float: right;
+      text-align: right;
+      width: 500px;
+    }
+
+    .topbar_tools a {
+      padding-left: 10px;
+    }
+
+    .topbar_tools span {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/mobile.gif") no-repeat scroll right 50%;
+      padding-right: 18px;
+    }
+
+    .header {
+      background: #F7F7F7 url(//cmsimgs.zuowen.com/zuowen/cms/images/pc/header.gif) repeat-x left bottom;
+      height: 184px;
+      position: relative;
+      width: 100%;
+      margin-top: 42px;
+    }
+
+    .header_wrapper {
+      margin: 0 auto;
+      position: relative;
+      width: 680px;
+      /* height:90px; */
+    }
+
+    .header_top {
+      height: 100px;
+    }
+
+    .logo {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/logo.gif") no-repeat scroll left top transparent;
+      margin-top: 32px;
+      float: left;
+      height: 48px;
+      width: 203px;
+    }
+
+    .search {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/search.gif") no-repeat scroll left top transparent;
+      height: 33px;
+      width: 480px;
+      float: left;
+      margin: 66px 292px 0 25px;
+    }
+
+    .nav {
+      height: 42px;
+      margin: 0 auto;
+      width: 1043px;
+    }
+
+    .nav ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .nav ul li {
+      float: left;
+      line-height: 42px;
+      text-align: center;
+      width: 100px;
+    }
+
+    .nav ul li a {
+      color: #fff;
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #666, 1px 1px 0 #eee;
+    }
+
+    .thisclass {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/navhover.png") no-repeat scroll center top 5px transparent;
+      color: #ff4b00 !important;
+      text-shadow: none !important;
+    }
+
+    .maidou {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/maidou.gif") no-repeat scroll left;
+      padding-left: 8px;
+    }
+
+    .subnav {
+      height: 42px;
+      margin: 0 auto;
+      width: 680px;
+    }
+
+    .subnav ul {
+      list-style: outside none none;
+      margin: 0 auto;
+      display: none
+    }
+
+    .subnav ul li {
+      float: left;
+      line-height: 42px;
+      padding-right: 12px;
+    }
+
+    .subnav ul li a {
+      display: block;
+      font-size: 14px;
+    }
+
+    .path {
+      height: 40px;
+      margin: 0 auto;
+      width: 980px;
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/tag.gif") no-repeat scroll left;
+      padding-left: 20px;
+      line-height: 40px;
+    }
+
+    .wrapper {
+      margin: 5px auto;
+      width: 680px;
+    }
+
+    .wrapper_left {
+      float: left;
+      width: 680px;
+    }
+
+    .wrapper_right {
+      float: right;
+      width: 300px;
+    }
+
+    .composition {
+      position: relative;
+      left: -10px;
+      background: url("https://filesdown.zuowen.com/img/2018/05/08/142919_5af143bfa9cd0.png");
+      font-size: 14px;
+      height: 110px;
+      width: 688px;
+    }
+
+    .h_title {
+      font-size: 18px;
+      text-align: center;
+      padding: 40px 0 0 9px;
+      width: 680px;
+    }
+
+    .h_time {
+      font-size: 12px;
+      color: #155b91;
+      padding: 12px 0 0 23px;
+      width: 92px;
+      float: left;
+    }
+
+
+    .h_tag {
+      width: 482px;
+      float: left;
+      padding: 12px 0 0 0;
+      color: #a26934;
+    }
+
+    .h_tag a {
+      color: #a26934;
+      padding-left: 10px;
+    }
+
+    .h_tag1 {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/tag1.gif") no-repeat scroll 0 0;
+      width: 650px;
+      float: left;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      position: relative;
+      top: -5px;
+    }
+
+    .h_tag1 a {
+      padding-left: 5px;
+    }
+
+    .con_main {
+      background: url("https://cmsimgs.zuowen.com/zuowen/cms/images/pc/bookcom.png") repeat-y;
+      padding: 0 32px 12px;
+      line-height: 31px;
+    }
+
+    .con_content p {
+      letter-spacing: 1px;
+      font-size: 18px;
+      word-wrap: break-word;
+    }
+
+    .review {
+      width: 680px;
+      position: relative;
+      left: -5px;
+      top: -15px;
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/review.png");
+      font-size: 14px;
+      width: 688px;
+    }
+
+    .review_f {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/review_f.png");
+      height: 26px;
+      position: relative;
+      left: 5px;
+    }
+
+    .review_f ul {
+      list-style: outside none none;
+      margin: 0 auto;
+      padding: 25px 30px 0 0;
+    }
+
+    .review_f ul li {
+      float: right;
+      top: 10px;
+      position: relative;
+      z-index: 1000;
+      padding-left: 5px;
+    }
+
+    .review_t {
+      position: relative;
+      left: 5px;
+      top: -23px;
+    }
+
+    .review_t ul {
+      list-style: outside none none;
+      margin: 0 auto;
+      padding: 0 5px 0 0;
+    }
+
+    .review_t ul li {
+      float: right;
+      top: 10px;
+      position: relative;
+      z-index: 1000;
+      padding-left: 5px;
+    }
+
+    .original {
+      position: relative;
+      right: -590px;
+      top: -77px;
+      width: 91px;
+    }
+
+    .h_review {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/review_bg.png")repeat-y;
+      margin-left: 5px;
+      font-size: 18px;
+      padding: 20px 30px 0 40px;
+      width: 609px;
+      color: #ff5b16;
+      font-weight: bold;
+      line-height: 30px;
+    }
+
+    .h_review_t {
+      font-size: 13px;
+      color: #ff5b16;
+      text-align: right;
+      line-height: 22px;
+    }
+
+    .h_review_t span {
+      color: #2da9c8;
+    }
+
+    .comfooter {
+      background: url("https://cmsimgs.zuowen.com/zuowen/cms/images/pc/bookfoot.png");
+      height: 47px;
+      top: -20px;
+      position: relative;
+
+    }
+
+    .praise {
+      width: 680px;
+      margin-top: 10px;
+      height: 60px;
+    }
+
+    .praise_t {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/praise_t_bg.png");
+      float: left;
+      width: 102px;
+      float: left;
+      height: 38px;
+      padding-left: 10px;
+      line-height: 38px;
+    }
+
+    .praise_t a {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/praise.png") no-repeat scroll 0 0;
+      padding-left: 25px;
+      font-weight: bold;
+      color: #dd3300;
+    }
+
+    .again-page {
+      float: right;
+      line-height: 33px;
+    }
+
+    .again-page span {
+      padding-right: 10px;
+    }
+
+    .again-page-btn {
+      float: right;
+      width: 110px;
+      height: 36px;
+      display: block;
+    }
+
+    .detail_title {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/detail_title_bg.png") no-repeat scroll 0 9px;
+      border-top: 2px solid #ccc;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 30px;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .author {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/author_bg.png");
+      height: 220px;
+      width: 260px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    .author_info {
+      height: 88px;
+    }
+
+    .author_info_t {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .author_info_t img {
+      border: 1px solid #d5f1ff;
+      border-radius: 50px;
+      height: 82px;
+      width: 82px;
+    }
+
+    .author_name {
+      height: 80px;
+      padding: 4px 0;
+    }
+
+    .author_name ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .author_name ul li {
+      float: left;
+      width: 145px;
+      line-height: 27px;
+    }
+
+    .author_name ul li span {
+      float: right;
+    }
+
+    .author_name ul li b {
+      font-size: 16px;
+      padding-right: 10px;
+    }
+
+    .focus {
+      height: 36px;
+      margin: 10px 0;
+      text-align: center;
+      width: 260px;
+    }
+
+    .focus a {
+      display: block;
+      width: 123px;
+      float: left;
+    }
+
+    .focus_l {
+      padding-right: 14px;
+    }
+
+    .author_new {
+      height: 90px;
+    }
+
+    .author_new ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .author_new ul li {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/news.gif") no-repeat scroll 0 6px;
+      padding-left: 28px;
+      line-height: 30px;
+      height: 30px;
+    }
+
+    .same {
+      height: 195px;
+      margin-bottom: 15px;
+    }
+
+    .same_t {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/same.gif");
+      height: 36px;
+      line-height: 35px;
+      padding-left: 18px;
+      font-weight: bold;
+    }
+
+    .same_t_r {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/same_r.gif");
+      height: 36px;
+      line-height: 35px;
+      padding-left: 18px;
+      font-weight: bold;
+    }
+
+    .same_t a {
+      font-size: 14px;
+      color: #eb5800;
+      padding-right: 5px;
+    }
+
+    .same_com {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/same_com.gif");
+      height: 159px;
+      padding: 0 20px;
+    }
+
+    .same_com ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .same_com ul li {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/tui.gif") no-repeat scroll 0 6px;
+      padding-left: 28px;
+      line-height: 30px;
+      height: 30px;
+      width: 234px;
+      overflow: hidden;
+    }
+
+    .talent {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/talent.gif");
+      padding: 35px 20px 0 20px;
+      height: 210px;
+      margin-bottom: 15px;
+    }
+
+    .talent_t {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/star.gif") no-repeat scroll 0 0;
+      padding-left: 25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .talent_com {
+      ;
+      height: 30px;
+      margin-bottom: 10px;
+      padding: 6px 0;
+      border-bottom: 1px dashed #d7d7d7;
+    }
+
+    .talent_com ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .talent_com ul li {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/tui.gif") no-repeat scroll 0 6px;
+      padding-left: 28px;
+      line-height: 30px;
+      height: 30px;
+    }
+
+    .talent_com1 {
+      ;
+      height: 30px;
+      margin-bottom: 10px;
+      padding: 6px 0;
+    }
+
+    .talent_com1 ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .talent_com1 ul li {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/tui.gif") no-repeat scroll 0 6px;
+      padding-left: 28px;
+      line-height: 30px;
+      height: 30px;
+    }
+
+    .box {
+      background: #FFF;
+      height: 198px;
+      width: 680px;
+      margin-bottom: 15px;
+    }
+
+    .box_t {
+      height: 35px;
+      padding: 0 20px;
+      border-bottom: 1px solid #e5e5e5;
+      line-height: 35px;
+      font-weight: bold;
+    }
+
+    .box_t span {
+      border-bottom: 3px solid #b9b2ed;
+      padding-bottom: 5px;
+    }
+
+    .box_t span a {
+      color: #5414c4;
+      padding-right: 5px;
+    }
+
+    .more {
+      float: right;
+      color: #8160d1;
+    }
+
+    .box_com {
+      padding: 10px 20px;
+      height: 143px;
+    }
+
+    .box_com ul {
+      list-style: outside none none;
+      margin: 0 auto;
+    }
+
+    .box_com ul li {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/tui.gif") no-repeat scroll 0 6px;
+      padding-left: 28px;
+      float: left;
+      width: 290px;
+      line-height: 28px;
+      height: 28px;
+    }
+
+    .box1 {
+      background: #FFF;
+      float: left;
+      width: 680px;
+      margin-bottom: 15px;
+    }
+
+    .box1_t {
+      height: 35px;
+      padding: 0 20px;
+      border-bottom: 1px solid #e5e5e5;
+      line-height: 35px;
+      font-weight: bold;
+    }
+
+    .box1_t span {
+      margin-right: 10px;
+    }
+
+    .box1_t span a {
+      color: #5414c4;
+    }
+
+    .box1_t span a:hover {
+      border-bottom: 3px solid #b9b2ed;
+      padding-bottom: 5px;
+    }
+
+    .box1_com {
+      padding: 10px 20px;
+      float: left;
+    }
+
+    .box1_com a {
+      border: 1px solid #e5e5e5;
+      float: left;
+      font-size: 12px;
+      line-height: 24px;
+      height: 24px;
+      margin: 0 10px 10px 0;
+      padding: 0 10px;
+    }
+
+    .zw_lm {
+      width: 300px;
+      margin-bottom: 15px;
+    }
+
+    .zw_lm_com {
+      background: #f7e0cb;
+      width: 580px;
+      height: 90px;
+      padding: 5px 18px;
+    }
+
+    .zw_lm_com_f {
+      width: 680px;
+      height: 90px;
+      padding: 5px 0;
+    }
+
+    .foot {
+      line-height: 24px;
+      margin: 0 auto;
+      width: 680px;
+      padding: 10px 0;
+      height: 100px;
+    }
+
+    .footl {
+      margin-left: 15px;
+      width: 606px;
+      float: left;
+    }
+
+    .footimg {
+      float: left;
+      margin-top: 20px;
+      width: 336px;
+      height: 33px;
+    }
+
+    .footimg img {
+      width: 336px;
+      height: 33px;
+    }
+
+    .footl a {
+      padding-right: 5px;
+      margin-left: 5px;
+    }
+
+    .footp {
+      color: gray;
+      margin-left: 5px;
+    }
+
+    .footp a {
+      color: gray;
+    }
+
+    .seakey {
+      height: 25px;
+      margin-top: 6px;
+      margin-left: 40px;
+      width: 348px;
+      border: none;
+      line-height: 38px;
+      float: left;
+    }
+
+    .seasubmit {
+      width: 55px;
+      height: 30px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer
+    }
+
+
+    /*最新投稿*/
+    .borderG {
+      border: 1px solid #E3E3E3;
+      border-bottom: none;
+    }
+
+    .slideAd i {
+      background: url(https://img.eduuu.com/website/zhongkao/images/mainsite/content/slide_icon.gif) no-repeat 0 0;
+      width: 9px;
+      height: 9px;
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+    }
+
+    .slideAdOn i {
+      background-position: 0 -11px;
+    }
+
+    .slideAd .info {
+      display: none;
+    }
+
+    .slideAdF .info {
+      display: block;
+    }
+
+    .news-text {
+      color: #666;
+      padding-top: 15px;
+      display: block
+    }
+
+    .news-text a,
+    .news-text a:hover {
+      color: #333 !important;
+    }
+
+    .titleH span {
+      float: right;
+      font-size: 12px;
+      color: #c00;
+      font-weight: normal;
+    }
+
+    .titleH em {
+      padding-left: 25px;
+      display: inline-block;
+    }
+
+    .con_scroll {
+      height: 228px;
+      overflow: hidden;
+    }
+
+    .con_scroll {
+      height: 228px;
+      overflow: hidden;
+    }
+
+    .apace_info ul {
+      *padding-top: 10px;
+    }
+
+    .apace_info dl {
+      padding: 7px 0;
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .apace_info dt {
+      float: left;
+    }
+
+    .apace_info img {
+      float: left;
+      display: block;
+      width: 56px;
+      padding: 0px;
+      height: 56px;
+      background: #FFFFFF;
+      border: 3px solid #DEDDDC;
+      border-radius: 33px;
+    }
+
+    .apace_info dd {
+      float: left;
+      width: 165px;
+      padding: 5px 0 0 10px;
+      color: #888888;
+    }
+
+    .apace_info dd a {
+      color: #0078b6;
+    }
+
+    .pd10 {
+      padding: 5px 7px 0px 10px;
+    }
+
+    .dotTop {
+      border-top: 1px dotted #ABDAF8;
+      padding-top: 10px;
+      margin-top: 15px;
+    }
+
+    .space_daren h3 {
+      overflow: hidden;
+    }
+
+    .space_daren h3 {
+      overflow: hidden;
+      zoom: 1;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .space_daren h3 a {
+      font-weight: normal;
+    }
+
+    .space_daren ul {
+      padding: 10px 0 4px 0;
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .space_daren li {
+      float: left;
+      margin: 0px 7px;
+      _display: inline;
+      text-align: center;
+      display: inline;
+      _margin: 0px 10px;
+    }
+
+    .space_daren li img {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #DEDDDC;
+      border-radius: 33px;
+      padding: 0px;
+      background: #ffffff;
+    }
+
+    .space_daren li span,
+    .space_daren li img {
+      display: block;
+    }
+
+    .zs01,
+    .zs01 a,
+    .zs01 a:hover {
+      color: #005599 !important;
+    }
+
+    .col614,
+    a.col614,
+    .col614 a {
+      color: #0078b6 !important;
+    }
+
+    .space_user_add {
+      padding: 0px 8px;
+      height: 22px;
+      background: #00AFFF;
+      line-height: 22px;
+      margin-top: 8px;
+      display: inline-block;
+      border-radius: 4px;
+      text-align: left;
+      _padding: 0px 7px;
+    }
+
+    .zs {
+      padding-top: 13px;
+    }
+
+    .zs01 a {
+      background: #C1EAFF;
+      color: #005599;
+      border: 1px #67CBFF solid;
+      border-radius: 15px;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      height: 20px;
+      line-height: 20px;
+      padding: 0px 8px;
+      font-size: 13px;
+    }
+
+    .zs01 a:hover {
+      background: #B8E7FF;
+      color: #000 !important;
+      border: 1px #00AFFF solid;
+    }
+
+    .apace_info dd a {
+      color: #333 !important
+    }
+
+    .space_user_add b {
+      background: url(https://files.eduuu.com/img/2014/01/09/211250_52cea052a87ce.gif) no-repeat -284px -51px;
+      float: left;
+      display: block;
+      width: 10px;
+      height: 9px;
+      margin: 7px 3px 0 0px;
+    }
+
+    .space_user_add:hover {
+      color: #fff;
+      background: #0094D7;
+    }
+
+    .space_user_adds,
+    .space_user_adds:hover {
+      background: #C8ECFF;
+      color: #0078B6;
+    }
+
+    .space_user_adds b {
+      background-position: -285px -94px;
+    }
+
+    .box2-bg ul li a,
+    .box2-bg ul li a:hover {
+      color: #005599 !important;
+    }
+
+    .space_user_add {}
+
+    .space_user_add:hover {
+      text-decoration: none;
+    }
+
+    .space_daren li span.zs a,
+    .space_daren li span.zs a:hover {
+      color: #000 !important;
+    }
+
+    .text_vote1:hover {
+      text-decoration: none;
+    }
+
+    #pay,
+    #pay:hover {
+      color: #0078B6;
+    }
+
+    .space_daren li span a.space_user_add {
+      color: #fff
+    }
+
+    .space_daren li span a.space_user_adds {
+      color: #0078b6;
+    }
+
+    .talent_t h3 {
+      float: right;
+    }
+
+    .same_com a {
+      margin-right: 10px;
+    }
+
+    .pr.tm20.bm20 {
+      margin-left: 22px;
+      width: 630px;
+    }
+
+    .tr {
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    .tougao {
+      float: right;
+      margin-left: 10px;
+      width: 100px;
+      margin-right: 10px
+    }
+
+    .rtougao {
+      float: right;
+      margin-top: -22px
+    }
+
+    .rtougao a {
+      color: red
+    }
+
+    .rtougao span {
+      margin-left: 5px
+    }
+
+    .rtougao img {
+      vertical-align: middle;
+      margin-top: -5px
+    }
+
+    .comment {
+      width: 630px;
+      margin-left: 22px;
+    }
+
+    .left-box2 {
+      background-color: #fff;
+      width: 680px;
+    }
+
+    .share2 a,
+    .share3 a {
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
+
+    .share_box_a4 {
+      background-image: url(//cmsimgs.zuowen.com/zuowen/cms/images/pc/share02.gif)
+    }
+
+    .share_box_a2 {
+      background-image: url(//cmsimgs.zuowen.com/zuowen/cms/images/pc/share03.gif)
+    }
+
+    /*二维码弹出*/
+    .inner_two_dimension_code {
+      background-color: #f7f7f7;
+      border: 1px solid #b6b6b6;
+      border-radius: 2px;
+      box-shadow: 0 2px 3px #cfcfcf;
+      cursor: default;
+      height: 185px;
+      line-height: 185px;
+      margin-left: 506px;
+      margin-top: 46px;
+      position: relative;
+      text-align: center;
+      width: 180px;
+      z-index: 101;
+    }
+
+    .two_dimension_code_top {
+      background: url("//cmsimgs.zuowen.com/zuowen/cms/images/pc/two_dimensicon.png") no-repeat scroll 0 1px;
+      height: 10px;
+      left: 155px;
+      position: absolute;
+      top: -7px;
+      width: 12px;
+    }
+
+    .two_dimension_code_main {
+      background-position: 16px 10px;
+      background-repeat: no-repeat;
+      height: 160px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .two_dimension_code_bottom {
+      color: #6c6c6c;
+      font: 12px/1.5 tahoma, arial, 宋体;
+      padding-top: 2px;
+      text-align: center;
+    }
+
+    .author_new li {
+      overflow: hidden;
+      width: 248px;
+    }
+
+    .pages {
+      text-align: center;
+    }
+
+    .pages a {
+      border: 1px solid #ddd;
+      color: #4f4f4f;
+      padding: 0 10px;
+    }
+
+    .pages a,
+    .pages font {
+      display: inline-block;
+      line-height: 30px;
+      padding: 0 10px;
+    }
+
+    .pages b {
+      padding: 0 10px;
+    }
+
+
+    .topNavR {
+      position: absolute;
+      right: 0;
+      top: 17px;
+      height: 67px;
+      zoom: 1;
+    }
+
+    .topNavR .con_us {
+      width: 100%
+    }
+
+    .topNavR .con_us li {
+      float: left;
+      color: #8052E4;
+      padding: 6px 8px;
+      margin-right: 10px;
+      display: inline-block;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 2px;
+      -weblkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      position: relative;
+      cursor: pointer
+    }
+
+    .topNavR .con_us li.on {
+      background: #e2e0e0
+    }
+
+    .topNavR .con_us li.w {
+      margin-right: 6px
+    }
+
+    .topNavR .con_us li>a {
+      display: block;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 3px;
+      margin: 0 auto;
+      *margin: 0;
+      overflow: hidden
+    }
+
+    .topNavR .tips {
+      display: none;
+      z-index: 1000;
+      position: absolute;
+      line-height: 1.5;
+      background: #fff;
+      width: 250px;
+      left: -125px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      -ms-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      -o-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px
+    }
+
+    .topNavR .tips .part {
+      overflow: hidden;
+      zoom: 1;
+      padding: 15px
+    }
+
+    .topNavR .tips .part1 {
+      border-bottom: 1px solid #e5e5e5
+    }
+
+    .topNavR .tips .conL {
+      width: 90px
+    }
+
+    .topNavR .tips .conR {
+      width: 130px;
+    }
+
+    /*
+.topNavR .tips .conR h3 {
+  font-size:15px;
+  font-weight:normal;
+  color:#343434
+}
+
+.topNavR .tips .conR span {
+  color:#09a0f5;
+  font-size:12px
+}
+*/
+    .topNavR .tips .conR .downA a {
+      -moz-transition: all .6s ease-in-out 0s;
+      -webkit-transition: all .6s ease-in-out 0s;
+      -o-transition: all .6s ease-in-out 0s;
+      display: block;
+      width: 60px;
+      font-size: 12px;
+      float: left;
+      text-align: center;
+      color: #8d8d8d;
+      text-decoration: none
+    }
+
+    .topNavR .tips .conR .downA a span {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      display: block;
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+      background: #efefef;
+      margin: 0 auto
+    }
+
+    .topNavR .tips .conR .downA a span i {
+      display: block;
+      background: url(http://gkw-www.oss-cn-beijing.aliyuncs.com/static/gaokao/public_images/tipsIcon.png) no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%
+    }
+
+    .topNavR .tips .conR .downA a:hover {
+      -webkit-transform: rotateY(360deg)
+    }
+
+    .topNavR .tips .conR .downA a span i.icon1 {
+      width: 18px;
+      height: 20px;
+      margin: -10px 0 0 -9px;
+      background-position: 0 0
+    }
+
+    .topNavR .tips .conR .downA a span i.icon2 {
+      width: 18px;
+      height: 22px;
+      margin: -11px 0 0 -9px;
+      background-position: 0 -28px
+    }
+
+    .topNavR .tips .conR .downA a span i.icon3 {
+      width: 14px;
+      height: 20px;
+      margin: -10px 0 0 -7px;
+      background-position: 0 -59px
+    }
+
+    .topNavR .tips .triangle-up {
+      width: 19px;
+      height: 5px;
+      background: url(http://gkw-www.oss-cn-beijing.aliyuncs.com/static/gaokao/public_images/tipsIcon.png) no-repeat;
+      background-position: 0 -87px;
+      position: absolute;
+      top: -5px;
+      right: 84px
+    }
+
+    .topNavR .tips .conR .pys {
+      color: #8d8d8d;
+      font-size: 12px
+    }
+
+    .topNavR .tips .conR div {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      height: 90px
+    }
+
+    .topNavR .con_us li a.wx_ic {
+      background: url('https://filesdown.zuowen.com/img/2017/07/28/144425_597add498de4c.png') no-repeat;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+    }
+
+    .topNavR .con_us li a.tel_ic {
+      background: url('https://filesdown.zuowen.com/img/2017/12/29/155205_5a45f4250d389.png') no-repeat;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+      background-size: 100% 100%;
+    }
+
+    .topNavR .zhuce_login {
+      position: absolute;
+      display: block;
+      font-size: 16px;
+      color: #fff;
+      right: 0;
+      line-height: 100%;
+      top: 15px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px
+    }
+
+    /*全站对联广告*/
+    .couplet_left {
+      position: fixed;
+      left: 5px;
+      top: 50%;
+      margin-top: -120px;
+      width: 120px;
+      height: 240px;
+      z-index: 1000;
+    }
+
+    .couplet_left_close {
+      position: absolute;
+      left: 0;
+      top: -20px;
+      width: 20px;
+      height: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .couplet_right {
+      position: fixed;
+      right: 5px;
+      top: 50%;
+      margin-top: -120px;
+      width: 120px;
+      height: 240px;
+      z-index: 1000;
+    }
+
+    .couplet_right_close {
+      position: absolute;
+      right: 0;
+      top: -20px;
+      width: 20px;
+      height: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper clearfix">
+    <div class="wrapper_left" style="display: none;" id="wrapper_left">
+
+    </div>
+    <p id="text">测试多页面入口</p>
+    <script>
+      var abc = 1
+      const text = document.getElementById('text');
+      text.onclick = function () {
+        abc++
+        if (abc === 10) {
+          text.style.display = 'none'
+          const body = document.getElementById('wrapper_left');
+          const html = `
+          <div class="composition">
+            <h1 class="h_title">爱你，我终生的选择</h1>
+            <p style="text-align:center;padding:10px">来源：网络转载</p>
+          </div>
+          <div class="con_main wx_dbclick">
+          <div class="con_content">
+            <p style="text-align: center;">2022年全国甲卷高考作文题目</p>
+            <p style="text-align: left;">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              为什么我的眼里常含泪水?因为我对这土地爱得深沉。
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              每当那一轮红日从东方冉冉升起，每当那一片旗帜在晨风中飘然扬起，我都会默默对自己说：爱你，我爱你。
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              温柔如你，如柳的爱抚，如被窝的温暖，你给远方的赤子最温柔的爱。建国初期，西方列强对你虎视眈眈，不仅军事上威胁，经济上封锁，连你的幼子也不放过!当太平洋那端传来你的孩子——钱学森、钱伟长急切的求救，你丝毫也不曾耽搁地发出你深切的呼唤，毫不犹豫地展开了你温暖的怀抱。终于，怀抱赤子忠心的游子回到了最爱的母亲身边。
+              </p>
+          </div>
+        </div>
+        <div class="comfooter"></div>
+        <div class='pages'></div>
+          `
+          body.innerHTML = html
+          body.style.display = 'block'
+        }
+      }
+   
+   </script>
+
+    <style>
+      .tab_content img {
+        object-fit: contain;
+      }
+
+      .book dd {
+        margin-top: 12px;
+        margin-left: 8px;
+      }
+    </style>
+  </div>
+
+</body>
+
+</html>
