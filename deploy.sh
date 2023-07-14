@@ -13,5 +13,5 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f https://github.com/OMGRNGEDG/Photoshop.github.io.git gh-pages
+git push -f https://github.com/OMGRNGEDG/Photoshop.github.io.git main:gh-pages
 cd -
