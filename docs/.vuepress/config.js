@@ -1,0 +1,12 @@
+module.exports = {
+  title: '个人博客',
+  description: '分享笔记，技术博客',
+  base: "/Photoshop.github.io/",
+  themeConfig: {
+    nav: [{ text: 'Home', link: '/' }],
+    sidebar: [
+      { title: 'Foo', path: '/foo' },
+      { title: 'Bar', path: '/bar' },
+    ],
+  },
+};
