@@ -13,5 +13,5 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:zichenlbl/vuepress.git gh-pages
+git push -f https://github.com/OMGRNGEDG/Photoshop.github.io.git gh-pages
 cd -
