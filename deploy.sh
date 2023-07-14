@@ -13,15 +13,9 @@ cd docs/.vuepress/dist
 # echo 'www.example.com' > CNAME
 
 git init
-git add .
-git commit -m 'first commit'
+git add -A
+git commit -m 'deploy'
 
-# 如果发布到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
-
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
-git remote add origin https://github.com/OMGRNGEDG/Photoshop.github.io.git
-git branch -M master
-git push -f https://github.com/OMGRNGEDG/Photoshop.github.io.git
+git push -f https://github.com/OMGRNGEDG/Photoshop.github.io.git master
 
 cd -
